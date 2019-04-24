@@ -133,6 +133,8 @@ async def consumer_handler(websocket, path):
         data = json.loads(message)
         content = data['data']
 
+        print(content)
+
         if checkMove("q", content): await centerAll()
 
         if checkMove("d", content): await moveHorz("r")
